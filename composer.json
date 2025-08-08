@@ -1,0 +1,26 @@
+{
+  "name": "pkg6/console",
+  "description": "A PHP console application",
+  "type": "library",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "zhiqiang",
+      "email": "zhiqiang2033@gmail.com"
+    }
+  ],
+  "require": {
+    "php": ">=7.2",
+    "ext-json": "*",
+    "symfony/console": "^5.4|^6.0",
+    "symfony/process": "^5.4|^6.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Pkg6\\Console\\": "src/"
+    }
+  },
+  "require-dev": {
+    "swoole/ide-helper": "^4.5"
+  }
+}
