@@ -71,10 +71,10 @@ abstract class Command extends SymfonyCommand
         if (isset($this->signature)) {
             $this->configureUsingFluentDefinition();
         } else {
-            parent::__construct($this->name);
+            parent::__construct($this->getName());
         }
-        $this->setDescription((string)$this->description);
-        $this->setHelp((string)$this->help);
+        $this->setDescription((string)$this->getDescription());
+        $this->setHelp((string)$this->getHelp());
         $this->setHidden($this->isHidden());
         if (!isset($this->signature)) {
             $this->specifyParameters();
@@ -119,7 +119,7 @@ abstract class Command extends SymfonyCommand
      */
     public function getDescription(): string
     {
-        return $this->description;
+        return $this->description ?? "";
     }
 
     /**
@@ -127,7 +127,7 @@ abstract class Command extends SymfonyCommand
      */
     public function getHelp(): string
     {
-        return $this->help;
+        return $this->help ?? "";
     }
 
     /**
